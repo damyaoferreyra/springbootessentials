@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
+import javax.persistence.SequenceGenerator;
 
 
 /**
@@ -21,6 +22,7 @@ public class AbstractEntity implements Serializable{
 
 	private static final long serialVersionUID = -3819017437658537967L;
 	@Id
+	@SequenceGenerator(name = "hibernate_seq", sequenceName = "hibernate_id_seq", allocationSize = 1)
 	@GeneratedValue( strategy = GenerationType.AUTO)
 	private long id;
 

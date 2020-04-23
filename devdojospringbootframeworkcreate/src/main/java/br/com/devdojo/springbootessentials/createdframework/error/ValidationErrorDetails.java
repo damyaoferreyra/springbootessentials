@@ -2,36 +2,47 @@ package br.com.devdojo.springbootessentials.createdframework.error;
 
 import javax.annotation.Generated;
 
-public class ResourceNotFoundDetails extends ErrorDetail{
-
+/**
+ * 
+ * @author ferreira
+ * @since 29/03/2020
+ */
+public class ValidationErrorDetails extends ErrorDetail{
+	
+	private String field;
+	private String fieldMessage;
+	
 	@Generated("SparkTools")
-	protected ResourceNotFoundDetails(Builder builder) {
+	private ValidationErrorDetails(Builder builder) {
+		this.field = builder.field;
+		this.fieldMessage = builder.fieldMessage;
 		setTitle(builder.title);
 		setStatus(builder.status);
 		setDetails(builder.details);
 		setTime(builder.time);
 		setDeveloperMessege(builder.developerMessege);
 	}
-	
 	/**
-	 * Creates builder to build {@link ResourceNotFoundDetails}.
+	 * Creates builder to build {@link ValidationErrorDetails}.
 	 * @return created builder
 	 */
 	@Generated("SparkTools")
 	public static Builder builder() {
 		return new Builder();
 	}
-
 	/**
-	 * Builder to build {@link ResourceNotFoundDetails}.
+	 * Builder to build {@link ValidationErrorDetails}.
 	 */
 	@Generated("SparkTools")
 	public static final class Builder {
+
 		private String title;
 		private int status;
 		private String details;
 		private long time;
 		private String developerMessege;
+		private String field;
+		private String fieldMessage;
 
 		private Builder() {
 		}
@@ -61,10 +72,33 @@ public class ResourceNotFoundDetails extends ErrorDetail{
 			return this;
 		}
 
-		public ResourceNotFoundDetails build() {
-			return new ResourceNotFoundDetails(this);
+		public Builder withField(String field) {
+			this.field = field;
+			return this;
 		}
+
+		public Builder withFieldMessage(String fieldMessage) {
+			this.fieldMessage = fieldMessage;
+			return this;
+		}
+
+		public ValidationErrorDetails build() {
+			return new ValidationErrorDetails(this);
+		}
+		
 	}
 	
-
+	public String getField() {
+		return field;
+	}
+	public void setField(String field) {
+		this.field = field;
+	}
+	public String getFieldMessage() {
+		return fieldMessage;
+	}
+	public void setFieldMessage(String fieldMessage) {
+		this.fieldMessage = fieldMessage;
+	}
+	
 }
