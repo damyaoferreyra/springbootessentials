@@ -1,0 +1,326 @@
+{
+	"info": {
+		"_postman_id": "f79c41cb-b5bb-4b7b-ba15-f1ad02206900",
+		"name": "springbootessentials - devdojo",
+		"description": "Material desenvolvido em aula.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET - AllStudent",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "juciaria.oliveira",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/v1/default/students?page=1&size=10&sort=name,asc",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v1",
+						"default",
+						"students"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "size",
+							"value": "10"
+						},
+						{
+							"key": "sort",
+							"value": "name,asc"
+						}
+					]
+				},
+				"description": "Method list Student"
+			},
+			"response": []
+		},
+		{
+			"name": "GET - AllStudent - Authentication",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "damiao.ferreira",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/v1/default/students",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v1",
+						"default",
+						"students"
+					]
+				},
+				"description": "Method list Student"
+			},
+			"response": []
+		},
+		{
+			"name": "GET - OneStudent",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/v1/default/students/1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v1",
+						"default",
+						"students",
+						"1"
+					]
+				},
+				"description": "Method list Student"
+			},
+			"response": []
+		},
+		{
+			"name": "GET - FindStudentByName",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "damiao.ferreira",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/v1/default/students/findStudentByName?nome=Damiao",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v1",
+						"default",
+						"students",
+						"findStudentByName"
+					],
+					"query": [
+						{
+							"key": "nome",
+							"value": "Damiao"
+						}
+					]
+				},
+				"description": "Method list Student"
+			},
+			"response": []
+		},
+		{
+			"name": "PUT - update from student",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "damiao.ferreira",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 3,\n    \"name\": \"Katsuki update name\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/students",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"students"
+					]
+				},
+				"description": "Method list Student"
+			},
+			"response": []
+		},
+		{
+			"name": "POST - SaveStudent",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "damiao.ferreira",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"\",\n    \"email\": \"\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/students",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"students"
+					]
+				},
+				"description": "Method list Student"
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE - delete student",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "damiao.ferreira",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/students/1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"students",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST - UserAdmin",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"damiao.ferreira\",\n    \"name\": \"Damiao Ferreira\",\n    \"password\": \"1234\",\n    \"admin\": true\n}"
+				},
+				"url": {
+					"raw": "{{url}}/v1/test/user",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v1",
+						"test",
+						"user"
+					]
+				},
+				"description": "Method list Student"
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"id": "48bd5c01-966d-4740-82ba-1ce7547c812e",
+			"key": "url",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
